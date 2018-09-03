@@ -4,6 +4,14 @@ function rechner(art){
     var elem_zahl1 = document.getElementById("zahl1"); 
     var elem_zahl2 = document.getElementById("zahl2");
 
+
+    /*Ersetzt alle Zeichen ausser Ziffern und Kommata*/
+    elem_zahl1.value = elem_zahl1.value.replace(/[^0-9,]/gi,"");
+    elem_zahl2.value = elem_zahl2.value.replace(/[^0-9,]/gi,"");
+    
+    console.log(elem_zahl1.value);
+    console.log(elem_zahl2.value);
+    
     if(elem_zahl2.value == "" || elem_zahl1.value == ""){
         elem_ergebnis.style.display = "none";
         return;
