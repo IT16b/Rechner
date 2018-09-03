@@ -18,6 +18,14 @@ function rechner(art){
             var ergebnis = parseFloat(elem_zahl1.value.replace(",",".")) - parseFloat(elem_zahl2.value.replace(",","."));
         break;
 
+        case 'geteilt':
+            var ergebnis = parseFloat(elem_zahl1.value.replace(",",".")) / parseFloat(elem_zahl2.value.replace(",","."));
+        break;
+
+        case 'mal':
+            var ergebnis = parseFloat(elem_zahl1.value.replace(",",".")) * parseFloat(elem_zahl2.value.replace(",","."));
+        break;
+
     }
     
     elem_ergebnis.innerHTML = ergebnis.toString().replace(".",",");
