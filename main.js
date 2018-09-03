@@ -9,8 +9,6 @@ function rechner(art){
     elem_zahl1.value = elem_zahl1.value.replace(/[^0-9,]/gi,"");
     elem_zahl2.value = elem_zahl2.value.replace(/[^0-9,]/gi,"");
     
-    console.log(elem_zahl1.value);
-    console.log(elem_zahl2.value);
     
     if(elem_zahl2.value == "" || elem_zahl1.value == ""){
         elem_ergebnis.style.display = "none";
@@ -33,17 +31,24 @@ function rechner(art){
         case 'mal':
             var ergebnis = parseFloat(elem_zahl1.value.replace(",",".")) * parseFloat(elem_zahl2.value.replace(",","."));
         break;
-
     }
+        elem_ergebnis.innerHTML = ergebnis.toString().replace(".",",");
+        elem_ergebnis.style.display = "block";
+    
 
-    function extround(zahl,n_stelle) {
-        zahl = (Math.round(zahl * n_stelle) / n_stelle);
-            return zahl;
-        }
+    
 
-    ergebnis =extround(ergebnis,1000);
+}
 
-    elem_ergebnis.innerHTML = ergebnis.toString().replace(".",",");
-    elem_ergebnis.style.display = "block";
+function extround(n_stelle) {
+    var zahl = document.getElementById("ergebnis");
+    var wert = (Math.round(parseFloat(zahl.innerHTML.replace(",",".")) * n_stelle) / n_stelle);
+    zahl.innerHTML = wert.toString().replace(".",",");
+           
+}
 
+function ce(){
+    document.getElementById("zahl1").value = "";
+    document.getElementById("zahl2").value = "";
+    document.getElementById("ergebnis").style.display = "none";
 }
