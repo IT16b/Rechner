@@ -27,7 +27,14 @@ function rechner(art){
         break;
 
     }
-    
+
+    function extround(zahl,n_stelle) {
+        zahl = (Math.round(zahl * n_stelle) / n_stelle);
+            return zahl;
+        }
+
+    ergebnis =extround(ergebnis,1000);
+
     elem_ergebnis.innerHTML = ergebnis.toString().replace(".",",");
     elem_ergebnis.style.display = "block";
 
