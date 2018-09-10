@@ -32,6 +32,14 @@
 
 #div{
     width:505px;
+    float: left;
+}
+
+.border{
+    border: solid 2px;
+    overflow: visible;
+    height: 200px;
+    margin-left: 20px;
 }
 
 #btns{
