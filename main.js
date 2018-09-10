@@ -35,6 +35,7 @@ function rechner(art){
         elem_ergebnis.innerHTML = ergebnis.toString().replace(".",",");
         elem_ergebnis.style.display = "block";
     
+        addListElement();
 
     
 
@@ -44,11 +45,42 @@ function extround(n_stelle) {
     var zahl = document.getElementById("ergebnis");
     var wert = (Math.round(parseFloat(zahl.innerHTML.replace(",",".")) * n_stelle) / n_stelle);
     zahl.innerHTML = wert.toString().replace(".",",");
-           
+    addListElement();           
 }
 
 function ce(){
     document.getElementById("zahl1").value = "";
     document.getElementById("zahl2").value = "";
     document.getElementById("ergebnis").style.display = "none";
+    removeListElements();
+}
+
+function addListElement(){
+
+    var parent_div = document.getElementById("div2");
+    var sub_div = document.createElement("div");
+    var ergebnis_text = document.createElement("span");
+    var ergebnis_value = document.getElementById("ergebnis").innerHTML;
+    var node = document.createTextNode(ergebnis_value);
+    
+    sub_div.classList.add("listenfeld");
+    sub_div.addEventListener("click", wertUbernahme());
+    parent_div.appendChild(sub_div);
+    ergebnis_text.appendChild(node);
+    sub_div.appendChild(ergebnis_text);
+}
+
+
+function removeListElements(){
+    var parent_div = document.getElementById("div2");
+    while (parent_div.firstChild) {
+        parent_div.removeChild(parent_div.firstChild);
+    }
+}
+
+function wertUbernahme(){
+    var elem_zahl1 = document.getElementById("zahl1"); 
+    var ergebnis_value = document.getElementById("ergebnis").innerHTML;
+    elem_zahl1 = parseFloat(ergebnis_value);
+    
 }

@@ -30,14 +30,14 @@
     display: none;
 }
 
-#div{
+#div, #div2{
     width:505px;
     float: left;
 }
 
 .border{
     border: solid 2px;
-    overflow: visible;
+    overflow: auto;
     height: 200px;
     margin-left: 20px;
 }
@@ -48,6 +48,18 @@
     margin-right: auto;
 }
 
-h1,h2,h3,h4,h5,#plus, #minus, #geteilt, #mal, #ce, #runden{   
+h1, h2, h3, h4, h5, span, #plus, #minus, #geteilt, #mal, #ce, #runden{   
     font-family: 'Righteous', cursive;
+}
+
+.listenfeld{
+    
+    width: 99%;
+    border: solid 0.5px grey;
+
+}
+
+.listenfeld span{
+    font-size: 2rem;
+
 }
